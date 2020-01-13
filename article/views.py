@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
-from django.contrib.auth.models import User
+
 import pdb
 
 # Create your views here.
@@ -168,12 +168,7 @@ def redit_article(request,article_id):
         except:
             return  HttpResponse('2')
 
-def article_titles(request,username=None):
-    if username:
-        user = User.objects.get(username=username)
-        article_title = ArticlePost.objects.filter(author=user)
-    else:
-        article_title = ArticlePost.objects.all()
+
 
 
 
