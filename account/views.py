@@ -38,7 +38,7 @@ def register(request):
             new_profile = userprofile_form.save(commit=False)
             new_profile.user = new_user
             new_profile.save()
-            return HttpResponse('successfully!!')
+            return HttpResponse(reversed('account:user_login'))
         else:
             return  HttpResponse('sorry, you can not register')
     else:
